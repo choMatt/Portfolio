@@ -1,0 +1,45 @@
+/* CSS Reset */
+
+/* Reset box model and padding */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Remove default list styles */
+  ul, ol {
+    list-style: none;
+  }
+  
+  /* Remove default margin for headings */
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+  }
+  
+  /* Remove default hyperlink styles */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Set base font and line height */
+  body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* Remove input and button styling */
+  
+  /* Optional: Add some additional styles for better cross-browser consistency */
+  html {
+    font-size: 16px;
+  }
+  
+  body {
+    background-color: #fffefe;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  
+  }
