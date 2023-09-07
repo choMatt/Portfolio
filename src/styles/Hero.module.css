@@ -1,0 +1,63 @@
+.hero{
+    border: 1px solid black;
+    width: 100%;
+    min-width: 280px;
+    min-height: 643px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top:50px
+}
+
+.imageContainer,
+.headingContainer,
+.buttonContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.imageContainer{
+    height: 260px;
+    align-items: center;
+    justify-content: center;
+}
+
+.headingContainer{
+    height: 110px;
+    align-items: center;
+}
+
+.buttonContainer{
+    height: 200px;
+    flex-direction: column;
+    gap:30px;
+    justify-content: center;
+}
+
+.heading{
+    font-size: 1.43rem;
+    width: 278px;
+    margin:0 auto;
+    font-weight: 600;
+    line-height: 140%;
+}
+
+.button{
+    width: 274px;
+    height: 48px;
+    box-shadow: 0px 10px 0px 0px rgba(0,0,0,1);
+    border: 2px solid black;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+}
+
+.button:nth-of-type(2){
+    background-color: #F97C60;
+}
