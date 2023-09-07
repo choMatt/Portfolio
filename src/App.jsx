@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import "../src/styles/global.css"
 import Navigation from '../src/components/Navigation'
+import Hero from '../src/components/Hero'
 
 function App() {
 
@@ -8,8 +9,8 @@ function App() {
       <div>
         <Navigation />
         <main>
-        <button>Hello</button>
-        </main>
+          <Hero />
+       </main>
       </div>
   )
 }
