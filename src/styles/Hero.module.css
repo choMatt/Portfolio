@@ -1,63 +1,163 @@
 .hero{
-    border: 1px solid black;
-    width: 100%;
-    min-width: 280px;
-    min-height: 643px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding-top:50px
-}
-
-.imageContainer,
-.headingContainer,
-.buttonContainer{
-    width: 100%;
-    display: flex;
-    align-items: center;
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  gap:10px
 }
 
 .imageContainer{
-    height: 260px;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.headingContainer{
-    height: 110px;
-    align-items: center;
+.imageContainer img{
+  width: 260px;
 }
 
-.buttonContainer{
-    height: 200px;
-    flex-direction: column;
-    gap:30px;
-    justify-content: center;
+.content{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap:25px;
 }
 
 .heading{
-    font-size: 1.43rem;
-    width: 278px;
-    margin:0 auto;
-    font-weight: 600;
-    line-height: 140%;
+  display: flex;
+  justify-content: center;
 }
 
-.button{
-    width: 274px;
-    height: 48px;
-    box-shadow: 0px 10px 0px 0px rgba(0,0,0,1);
-    border: 2px solid black;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
+.heading h1{
+  width: 290px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.buttons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap:20px;
+}
+
+.buttons button{
+  width:274px;
+  height: 48px;
+  border-radius: 10px;
+  border: 3px solid black;
+  box-shadow: 0px 10px 0px 0px rgba(0,0,0,0.75);
+}
+
+.buttons button:nth-of-type(2){
+  background-color: #F97C60;
+}
+
+
+/* Mobile L */
+@media (min-width: 414px){
+  .imageContainer img{
+    width: 300px;
+  }
+
+  .heading h1{
+    width: 330px;
+    font-size: 1.7rem;
+  }
+
+  .buttons button{
+    width:294px;
+    height: 55px;
+  }
+}
+
+/* Tablet */
+@media (min-width:768px){
+  .hero{
+    height: 350px;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+  }
+
+  .imageContainer img{
+    width: 280px;
+  }
+
+  .content{
+    text-align: left;
     justify-content: center;
-    font-weight: 500;
+  }
+
+  .heading h1{
+    width: 440px;
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 3rem;
+    letter-spacing: 1px;
+  }
+
+  .buttons{
+    justify-content: start;
+    flex-direction: row;
+  }
+
+  .buttons button{
+    width:148px;
+    height: 40px;
+  }
+
+  .buttons button:nth-of-type(2){
+    width:138px;
+    height: 40px;
+    background-color: #F97C60;
+  }
+
 }
 
-.button:nth-of-type(2){
-    background-color: #F97C60;
+@media (min-width:1024px ) {
+  .hero{
+    height: 450px;
+  }
+
+  .imageContainer img{
+    width: 326px;
+  }
+
+  .heading h1{
+    width: 540px;
+    font-size: 2.8rem;
+    line-height: 4rem;
+
+  }
+
+}
+
+@media (min-width: 1440px){
+  .hero{
+    height: 450px;
+  }
+
+  .imageContainer img{
+    width: 366px;
+  }
+
+  .heading h1{
+    width: 810px;
+    font-size: 3.675rem;
+    line-height: 4.40rem;
+    letter-spacing: 5px;
+
+  }
+
+  .buttons button{
+    width:208px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .buttons button:nth-of-type(2){
+    width:188px;
+    height: 50px;
+  }
 }
