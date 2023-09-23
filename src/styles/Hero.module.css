@@ -21,6 +21,7 @@
   flex-direction: column;
   text-align: center;
   gap:25px;
+  padding:0px;
 }
 
 .heading{
@@ -73,9 +74,9 @@
 }
 
 /* Tablet */
-@media (min-width:768px){
+@media (min-width:769px){
   .hero{
-    height: 350px;
+    height: 320px;
     flex-direction: row-reverse;
     justify-content: space-evenly;
   }
@@ -87,14 +88,16 @@
   .content{
     text-align: left;
     justify-content: center;
+    padding-left:20px;
+
   }
 
   .heading h1{
-    width: 440px;
+    width: 469px;
     font-size: 2.2rem;
     font-weight: 600;
     line-height: 3rem;
-    letter-spacing: 1px;
+    letter-spacing: 3px;
   }
 
   .buttons{
@@ -117,25 +120,25 @@
 
 @media (min-width:1024px ) {
   .hero{
-    height: 450px;
+    height: 360px;
   }
 
   .imageContainer img{
-    width: 326px;
+    width: 300px;
   }
 
   .heading h1{
-    width: 540px;
+    width: 610px;
     font-size: 2.8rem;
     line-height: 4rem;
-
+    letter-spacing: 4px;
   }
 
 }
 
 @media (min-width: 1440px){
   .hero{
-    height: 450px;
+    height: 420px;
   }
 
   .imageContainer img{
