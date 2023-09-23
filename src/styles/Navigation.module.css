@@ -42,10 +42,10 @@
   justify-content: center;
   right: 0;
   top: 0;
-  background-color: #F97C60;
+  background-color: #f97c60;
   transition: transform 300ms ease-in-out;
-  font-size:25px;
-  gap:20px
+  font-size: 25px;
+  gap: 20px;
 }
 
 /* Sidebar Menu Closed State */
@@ -78,4 +78,51 @@
 .backDropOpened {
   display: block;
   background-color: rgba(0, 0, 0, 0.562);
+}
+
+@media (min-width: 769px) {
+  .logo{
+    letter-spacing: 3px;
+  }
+
+  .nav{
+    max-width: 1300px;
+    margin: 0 auto;
+    position: unset;
+    width: 90%;
+    height: 80px;
+    padding:unset;
+  }
+
+  .list {
+    position: unset;
+    height: 30px;
+    max-width: 440px;
+    flex-direction: row;
+    font-size: 15px;
+    background-color: #ffffff00;
+    transform: translateX(0%);
+    transition: unset;
+    gap: 30px;
+    justify-content: end;
+    font-weight: 500;
+  }
+
+  .backDropOpened {
+    display: none;
+  }
+
+  .burger {
+    display: none;
+  }
+
+  .item:nth-of-type(4){
+    display: grid;
+    place-items: center;
+    width: 125px;
+    height: 39px;
+    background-color: black;
+    color:white;
+    border-radius: 20px;
+  }
 }
