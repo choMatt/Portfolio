@@ -1,18 +1,18 @@
-import { useState } from 'react'
-import "../src/styles/global.css"
-import Navigation from '../src/components/Navigation'
-import Hero from '../src/components/Hero'
+import "./styles/global.css";
+import Navigation from "./components/Navigation";
+import Hero from "./components/Hero";
+import Sections from "./components/Sections";
 
 function App() {
-
   return (
-      <div>
-        <Navigation />
-        <main>
-          <Hero />
-       </main>
-      </div>
-  )
+    <>
+      <Navigation />
+      <main id="top">
+        <Hero />
+        <Sections />
+      </main>
+    </>
+  );
 }
 
-export default App
+export default App;

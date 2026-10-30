@@ -1,50 +1,46 @@
-import React from "react";
 import { useState } from "react";
 import Styles from "../styles/Navigation.module.css";
-import CrossSvg from "../assets/cross-svgrepo-com.svg";
-import BurgerSvg from "../assets/burger-menu-svgrepo-com.svg";
+
+const links = [
+  { label: "About", href: "#about" },
+  { label: "Tech Stack", href: "#stack" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
+];
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  function toggleMenu() {
-    setIsMenuOpen(!isMenuOpen);
-  }
+  const closeMenu = () => setIsMenuOpen(false);
+
   return (
-    <div className={Styles.nav}>
-      <div
-        onClick={toggleMenu}
-        className={`${Styles.backDrop} ${
-          isMenuOpen ? Styles.backDropOpened : Styles.backDropClosed
-        }`}
-      ></div>
-
-      <h1 className={Styles.logo}>CHO.</h1>
-
-      <label htmlFor="burger" className={Styles.burger}>
-        <img className={Styles.burgerSvg} src={BurgerSvg} alt="" />
-      </label>
-
-      <input
-        onClick={toggleMenu}
-        id="burger"
-        className={Styles.toggle}
-        type="checkbox"
-      />
-      
-      <ul
-        className={`${Styles.list} ${
-          isMenuOpen ? Styles.listOpened : Styles.listClosed
-        }`}
-      >
-        <label htmlFor="burger" className={`${Styles.burger} ${Styles.crossIcon}`}>
-          <img className={Styles.crossSvg} src={CrossSvg} alt="" />
-        </label>
-        <li className={Styles.item}>About</li>
-        <li className={Styles.item}>Tech Stack</li>
-        <li className={Styles.item}>Projects</li>
-        <li className={Styles.item}>Contact</li>
-      </ul>
-    </div>
+    <header className={Styles.header}>
+      <nav className={Styles.nav} aria-label="Main navigation">
+        <a className={Styles.logo} href="#top" onClick={closeMenu} aria-label="Cho, home">
+          CHO<span>.</span>
+        </a>
+        <button
+          className={Styles.menuButton}
+          type="button"
+          aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={isMenuOpen}
+          aria-controls="primary-navigation"
+          onClick={() => setIsMenuOpen((open) => !open)}
+        >
+          <span />
+          <span />
+        </button>
+        <div
+          className={`${Styles.menu} ${isMenuOpen ? Styles.menuOpen : ""}`}
+          id="primary-navigation"
+        >
+          {links.map((link) => (
+            <a key={link.href} href={link.href} onClick={closeMenu}>
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </nav>
+    </header>
   );
 }

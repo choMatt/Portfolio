@@ -1,166 +1,82 @@
-.hero{
-  width: 100%;
-  max-width: 1440px;
-  display: flex;
-  flex-direction: column;
-  gap:10px
-}
-
-.imageContainer{
-  display: flex;
+.hero {
+  min-height: 520px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr);
   align-items: center;
-  justify-content: center;
+  gap: 48px;
+  padding: 28px 0 76px;
 }
 
-.imageContainer img{
-  width: 260px;
-}
-
-.content{
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  gap:25px;
-  padding:0px;
-}
-
-.heading{
+.imageContainer {
   display: flex;
   justify-content: center;
+  align-items: center;
+  order: 2;
 }
 
-.heading h1{
-  width: 290px;
-  font-size: 1.5rem;
+.image {
+  width: min(100%, 390px);
+  object-fit: contain;
+}
+
+.content { max-width: 650px; }
+.eyebrow {
+  margin-bottom: 20px;
+  color: var(--accent);
+  font-size: .76rem;
   font-weight: 700;
+  letter-spacing: .16em;
 }
-
-.buttons{
+.content h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2.8rem, 5.5vw, 5rem);
+  line-height: 1.04;
+  letter-spacing: -.055em;
+  font-weight: 600;
+}
+.content h1 span { color: var(--accent); }
+.intro {
+  max-width: 510px;
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+.buttons {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
+.primaryButton, .secondaryButton {
+  min-height: 50px;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  flex-direction: column;
-  gap:20px;
+  gap: 12px;
+  padding: 0 22px;
+  border: 1px solid var(--ink);
+  border-radius: 7px;
+  font-weight: 700;
+  transition: transform 160ms ease, background 160ms ease;
 }
+.primaryButton { color: #fff; background: var(--ink); }
+.secondaryButton { background: transparent; }
+.primaryButton:hover, .secondaryButton:hover { transform: translateY(-3px); }
+.secondaryButton:hover { background: #eeede7; }
 
-.buttons button{
-  width:274px;
-  height: 48px;
-  border-radius: 10px;
-  border: 3px solid black;
-  box-shadow: 0px 10px 0px 0px rgba(0,0,0,0.75);
-}
-
-.buttons button:nth-of-type(2){
-  background-color: #F97C60;
-}
-
-
-/* Mobile L */
-@media (min-width: 414px){
-  .imageContainer img{
-    width: 300px;
+@media (max-width: 760px) {
+  .hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 20px 0 62px;
   }
-
-  .heading h1{
-    width: 330px;
-    font-size: 1.7rem;
-  }
-
-  .buttons button{
-    width:294px;
-    height: 55px;
-  }
-}
-
-/* Tablet */
-@media (min-width:769px){
-  .hero{
-    height: 320px;
-    flex-direction: row-reverse;
-    justify-content: space-evenly;
-  }
-
-  .imageContainer img{
-    width: 280px;
-  }
-
-  .content{
-    text-align: left;
-    justify-content: center;
-    padding-left:20px;
-
-  }
-
-  .heading h1{
-    width: 469px;
-    font-size: 2.2rem;
-    font-weight: 600;
-    line-height: 3rem;
-    letter-spacing: 3px;
-  }
-
-  .buttons{
-    justify-content: start;
-    flex-direction: row;
-  }
-
-  .buttons button{
-    width:148px;
-    height: 40px;
-  }
-
-  .buttons button:nth-of-type(2){
-    width:138px;
-    height: 40px;
-    background-color: #F97C60;
-  }
-
-}
-
-@media (min-width:1024px ) {
-  .hero{
-    height: 360px;
-  }
-
-  .imageContainer img{
-    width: 300px;
-  }
-
-  .heading h1{
-    width: 610px;
-    font-size: 2.8rem;
-    line-height: 4rem;
-    letter-spacing: 4px;
-  }
-
-}
-
-@media (min-width: 1440px){
-  .hero{
-    height: 420px;
-  }
-
-  .imageContainer img{
-    width: 366px;
-  }
-
-  .heading h1{
-    width: 810px;
-    font-size: 3.675rem;
-    line-height: 4.40rem;
-    letter-spacing: 5px;
-
-  }
-
-  .buttons button{
-    width:208px;
-    height: 50px;
-    font-size: 1.2rem;
-  }
-
-  .buttons button:nth-of-type(2){
-    width:188px;
-    height: 50px;
-  }
+  .imageContainer { order: 0; }
+  .image { width: min(76%, 290px); }
+  .content { text-align: center; margin: 0 auto; }
+  .content h1 { font-size: clamp(2.55rem, 11vw, 4rem); }
+  .intro { margin-left: auto; margin-right: auto; }
+  .buttons { justify-content: center; }
 }
