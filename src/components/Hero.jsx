@@ -17,20 +17,21 @@ export default function Hero() {
   useEffect(() => {
     const phrase = phrases[phraseIndex];
 
-    if (!deleting && text === phrase) {
-      const pauseTimer = window.setTimeout(() => setPaused(true), 1400);
-      return () => window.clearTimeout(pauseTimer);
-    }
-
+    // Handle the pause before deleting before checking whether typing is complete.
     if (paused) {
-      const deleteTimer = window.setTimeout(() => {
+      const timer = window.setTimeout(() => {
         setPaused(false);
         setDeleting(true);
-      }, 250);
-      return () => window.clearTimeout(deleteTimer);
+      }, 1400);
+      return () => window.clearTimeout(timer);
     }
 
-    const typingTimer = window.setTimeout(() => {
+    if (!deleting && text === phrase) {
+      setPaused(true);
+      return;
+    }
+
+    const timer = window.setTimeout(() => {
       if (deleting) {
         if (text.length <= 1) {
           setText("");
@@ -44,7 +45,7 @@ export default function Hero() {
       }
     }, deleting ? 35 : 75);
 
-    return () => window.clearTimeout(typingTimer);
+    return () => window.clearTimeout(timer);
   }, [text, deleting, paused, phraseIndex]);
 
   return (
