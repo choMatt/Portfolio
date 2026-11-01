@@ -1,6 +1,6 @@
 import Styles from "../styles/Sections.module.css";
 
-const skills = ["HTML", "CSS", "JavaScript", "React", "Vite"];
+const skills = ["HTML", "CSS", "JavaScript", "React", "React-native", "Vite", "Git", "Supabase", "NextJs"];
 
 export default function Sections() {
   return (
